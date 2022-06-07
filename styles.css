@@ -13,6 +13,16 @@
   src: url("./fonts/Poppins-SemiBold.ttf");
 }
 
+:root {
+  --green: #27ae60;
+  --dark-color: #219150;
+  --black: #444;
+  --light-color: #666;
+  --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  --border-hover: 0.1rem solid var(--black);
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,6 +34,7 @@
 html {
   font-size: 62.5%;
   overflow-x: hidden;
+  scroll-padding-top: 5rem;
   scroll-behavior: smooth;
 }
 
@@ -36,5 +47,299 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-  background: #444;
+  background: var(--black);
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.9rem 3rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  background-color: var(--green);
+  font-size: 1.7rem;
+  cursor: pointer;
+  border: none;
+  font-size: "Poppins-SemiBold";
+  font-weight: 500;
+}
+
+.btn:hover {
+  background-color: var(--dark-color);
+}
+
+/* #######HEADER SECTION START########### */
+header .header-one {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5em 9%;
+}
+
+header .header-one .logo {
+  font-size: 2.5rem;
+  font-family: "Poppins-BoldItalic";
+  font-weight: bolder;
+  color: var(--black);
+}
+
+header .header-one .logo span {
+  color: var(--green);
+  margin-right: 0.5rem;
+}
+
+header .header-one form {
+  width: 50rem;
+  height: 5rem;
+  border: var(--border);
+  overflow: hidden;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+
+header .header-one form input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 1.2rem;
+  font-size: 1.6rem;
+  color: var(--black);
+}
+
+header .header-one form label {
+  font-size: 2.5rem;
+  padding-right: 1.5rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+header .header-one form label:hover,
+header .header-one .icons div:hover,
+header .header-one .icons a:hover {
+  color: var(--green);
+}
+
+header .header-one .icons {
+  display: flex;
+}
+
+header .header-one .icons div,
+header .header-one .icons a {
+  font-size: 2.5rem;
+  margin-left: 1.5rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+header .header-one .icons #search-btn {
+  display: none;
+}
+
+header .header-two {
+  background-color: var(--green);
+}
+
+header .header-two nav {
+  text-align: center;
+}
+
+header .header-two nav a {
+  color: #fff;
+  display: inline-block;
+  padding: 1.2rem;
+  font-size: 1.7rem;
+}
+
+header .header-two nav a:hover {
+  background-color: var(--dark-color);
+}
+
+header .header-two.active {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+/* #######HEADER SECTION END########### */
+
+/* Nav bar bottom start */
+.nav-bottom {
+  text-align: center;
+  background-color: var(--green);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  padding: 2rem 0;
+  display: none;
+}
+
+.nav-bottom a {
+  font-size: 2.5rem;
+  padding: 2rem;
+  color: #fff;
+}
+
+.nav-bottom a:hover {
+  background-color: var(--dark-color);
+}
+/* Nav bar bottom end */
+
+/* Login form start */
+.login-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  right: -105%;
+  top: 0;
+  z-index: 1001;
+  height: 100%;
+  width: 100%;
+  transition: 0.1s linear;
+}
+
+.login-form-container.show {
+  right: 0;
+}
+
+.login-form-container form {
+  background-color: #fff;
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  width: 40rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  margin: 2rem;
+}
+
+.login-form-container form h3 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: var(--black);
+  text-align: center;
+}
+
+.login-form-container form span {
+  display: block;
+  font-size: 1.5rem;
+  padding-top: 1rem;
+}
+
+.login-form-container form .box {
+  margin: 0.7rem 0;
+  border: 0.1rem solid var(--black);
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+  padding: 1rem 1.2rem;
+  color: var(--black);
+  width: 100%;
+  outline: none;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+
+.checkbox label {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--light-color);
+}
+
+.login-form-container form .btn {
+  text-align: center;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.login-form-container form p {
+  padding-top: 0.8rem;
+  color: var(--light-color);
+  font-size: 1.5rem;
+}
+
+.login-form-container form p a {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+.login-form-container #close-login-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  font-size: 5rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+/* Login form end */
+
+/* #########MEDIA QUERIES############ */
+@media screen and (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  header .header-one {
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    scroll-padding-top: 0;
+  }
+
+  body {
+    padding-bottom: 6rem;
+  }
+
+  header .header-two {
+    display: none;
+  }
+
+  .nav-bottom {
+    display: block;
+  }
+
+  header .header-one {
+    box-shadow: var(--box-shadow);
+    position: relative;
+  }
+
+  header .header-one form {
+    position: absolute;
+    box-shadow: var(--box-shadow);
+    width: 90%;
+    top: -115%;
+    right: 2rem;
+  }
+
+  header .header-one .icons #search-btn {
+    display: inline-block;
+  }
+
+  header .header-one form.show {
+    top: 115%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
 }

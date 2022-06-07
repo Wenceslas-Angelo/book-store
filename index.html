@@ -8,6 +8,72 @@
     <title>Bookly</title>
   </head>
   <body>
+    <!-- Header section start -->
+    <header>
+      <div class="header-one">
+        <a href="#" class="logo">
+          <span><i class="fas fa-book"></i></span>Bookly
+        </a>
+        <form class="search-form">
+          <input type="search" id="search-box" placeholder="Search here..." />
+          <label for="search-box"><i class="fas fa-search"></i></label>
+        </form>
+        <div class="icons">
+          <div id="search-btn"><i class="fas fa-search"></i></div>
+          <a href="#"><i class="fas fa-heart"></i></a>
+          <a href="#"><i class="fas fa-shopping-cart"></i></a>
+          <div id="login-btn"><i class="fas fa-user"></i></div>
+        </div>
+      </div>
+
+      <div class="header-two">
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#featured">Featured</a>
+          <a href="#arrivals">Arrivals</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#blogs">Blogs</a>
+        </nav>
+      </div>
+    </header>
+    <!-- Header section end -->
+
+    <!-- Bottom navbar start -->
+    <nav class="nav-bottom">
+      <a href="#home"><i class="fas fa-home"></i></a>
+      <a href="#featured"><i class="fas fa-list"></i></a>
+      <a href="#arrivals"><i class="fas fa-tags"></i></a>
+      <a href="#reviews"><i class="fas fa-comments"></i></a>
+      <a href="#blogs"><i class="fas fa-blog"></i></a>
+    </nav>
+    <!-- Bottom navbar end -->
+
+    <!-- Login form start -->
+    <div class="login-form-container">
+      <div id="close-login-btn"><i class="fas fa-times"></i></div>
+      <form action="">
+        <h3>Sign in</h3>
+        <span>Username</span
+        ><input class="box" type="text" placeholder="enter your name here" />
+        <span>Email</span
+        ><input class="box" type="email" placeholder="enter your email here" />
+        <span>Password</span
+        ><input
+          class="box"
+          type="password"
+          placeholder="enter your password here"
+        />
+        <div class="checkbox">
+          <input type="checkbox" id="remember-me" />
+          <label for="remember-me">remember me</label>
+        </div>
+        <input type="submit" value="Sign in" class="btn" />
+        <p>Forget password? <a href="#">Click here</a></p>
+        <p>Don' t have an account? <a href="#">Sign up</a></p>
+      </form>
+    </div>
+    <!-- Login form end -->
+    <script src="./dist/all.min.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
