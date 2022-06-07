@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("./fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Poppins-BoldItalic";
+  src: url("./fonts/Poppins-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("./fonts/Poppins-SemiBold.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+  font-family: "Poppins-Regular", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #444;
+}
