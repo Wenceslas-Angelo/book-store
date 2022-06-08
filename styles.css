@@ -54,6 +54,10 @@ a {
   text-decoration: none;
 }
 
+section {
+  padding: 5rem 9%;
+}
+
 .btn {
   margin-top: 1rem;
   display: inline-block;
@@ -288,6 +292,56 @@ header .header-two.active {
 
 /* Login form end */
 
+/* Home section start */
+#home {
+  background: url(./image/banner-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#home .row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+#home .row .content {
+  flex: 1 1 42rem;
+}
+
+#home .row .content h3 {
+  color: var(--black);
+  font-size: 4.5rem;
+}
+
+#home .row .content p {
+  color: var(--light-color);
+  font-size: 1.5rem;
+  line-height: 2;
+  padding: 1rem 0;
+}
+
+#home .row .books-slider {
+  flex: 1 1 42rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+#home .row .books-slider a img {
+  height: 25rem;
+}
+
+#home .row .books-slider a:hover img {
+  transform: scale(0.9);
+}
+
+#home .row .books-slider .stand {
+  width: 100%;
+  margin-top: -2rem;
+}
+/* Home section end */
+
 /* #########MEDIA QUERIES############ */
 @media screen and (max-width: 991px) {
   html {
@@ -296,6 +350,10 @@ header .header-two.active {
 
   header .header-one {
     padding: 2rem;
+  }
+
+  section {
+    padding: 3rem 2rem;
   }
 }
 
@@ -335,6 +393,14 @@ header .header-two.active {
 
   header .header-one form.show {
     top: 115%;
+  }
+
+  #home .row .content {
+    text-align: center;
+  }
+
+  #home .row .content h3 {
+    font-size: 3.5rem;
   }
 }
 
