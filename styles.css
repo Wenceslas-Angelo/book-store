@@ -342,6 +342,37 @@ header .header-two.active {
 }
 /* Home section end */
 
+/* Icons section start */
+.icons-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+
+.icons-container .icons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+.icons-container .icons span {
+  font-size: 3.5rem;
+  color: var(--green);
+}
+
+.icons-container .icons h3 {
+  font-size: 2.2rem;
+  color: var(--black);
+  padding-bottom: 0.5rem;
+}
+
+.icons-container .icons p {
+  font-size: 1.5rem;
+  color: var(--light-color);
+}
+/* Icons section end */
+
 /* #########MEDIA QUERIES############ */
 @media screen and (max-width: 991px) {
   html {
