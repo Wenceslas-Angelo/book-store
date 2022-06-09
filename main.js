@@ -8,6 +8,7 @@ const closeLoginBtn = document.querySelector("#close-login-btn");
 
 const featuredWrapper = document.querySelector("#featured .swiper-wrapper");
 const arrivalWrapper = document.querySelectorAll("#arrivals .swiper-wrapper");
+const reviewWrapper = document.querySelector("#reviews .swiper-wrapper");
 
 const books = [
   {
@@ -72,6 +73,75 @@ const books = [
   },
 ];
 
+const reviews = [
+  {
+    id: 1,
+    client: {
+      name: "Monkey D. Luffy",
+      image: "./image/pic-1.png",
+    },
+    message: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi,
+    beatae distinctio iure ratione expedita ex nihil accusantium optio
+    commodi a ut quidem adipisci tempore nisi ullam eaque blanditiis.
+    Eaque, eum.`,
+  },
+  {
+    id: 2,
+    client: {
+      name: "Monkey D. Luffy",
+      image: "./image/pic-2.png",
+    },
+    message: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi,
+    beatae distinctio iure ratione expedita ex nihil accusantium optio
+    commodi a ut quidem adipisci tempore nisi ullam eaque blanditiis.
+    Eaque, eum.`,
+  },
+  {
+    id: 3,
+    client: {
+      name: "Monkey D. Luffy",
+      image: "./image/pic-3.png",
+    },
+    message: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi,
+    beatae distinctio iure ratione expedita ex nihil accusantium optio
+    commodi a ut quidem adipisci tempore nisi ullam eaque blanditiis.
+    Eaque, eum.`,
+  },
+  {
+    id: 4,
+    client: {
+      name: "Monkey D. Luffy",
+      image: "./image/pic-4.png",
+    },
+    message: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi,
+    beatae distinctio iure ratione expedita ex nihil accusantium optio
+    commodi a ut quidem adipisci tempore nisi ullam eaque blanditiis.
+    Eaque, eum.`,
+  },
+  {
+    id: 5,
+    client: {
+      name: "Monkey D. Luffy",
+      image: "./image/pic-5.png",
+    },
+    message: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi,
+    beatae distinctio iure ratione expedita ex nihil accusantium optio
+    commodi a ut quidem adipisci tempore nisi ullam eaque blanditiis.
+    Eaque, eum.`,
+  },
+  {
+    id: 6,
+    client: {
+      name: "Monkey D. Luffy",
+      image: "./image/pic-6.png",
+    },
+    message: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi,
+    beatae distinctio iure ratione expedita ex nihil accusantium optio
+    commodi a ut quidem adipisci tempore nisi ullam eaque blanditiis.
+    Eaque, eum.`,
+  },
+];
+
 books.forEach((book) => {
   featuredWrapper.innerHTML += `
   <div class="swiper-slide box">
@@ -129,6 +199,25 @@ books.forEach((book, index) => {
     </div>
   </a>
 `);
+});
+
+reviews.forEach((review) => {
+  reviewWrapper.innerHTML += `
+  <div class="swiper-slide box">
+  <img src="${review.client.image}" alt="client image" />
+  <h3>${review.client.name}</h3>
+  <p>
+    ${review.message}
+  </p>
+  <div class="stars">
+    <span><i class="fas fa-star"></i></span>
+    <span><i class="fas fa-star"></i></span>
+    <span><i class="fas fa-star"></i></span>
+    <span><i class="fas fa-star"></i></span>
+    <span><i class="fas fa-star-half-alt"></i></span>
+  </div>
+</div>
+  `;
 });
 
 window.addEventListener("scroll", () => {
@@ -205,6 +294,28 @@ const swiperFeatured = new Swiper(".featured-slider", {
 
 const swiperArrivals = new Swiper(".arrivals-slider", {
   loop: true,
+  centeredSlides: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+});
+
+const swiperReviews = new Swiper(".reviews-slider", {
+  loop: true,
+  gabCursor: true,
   centeredSlides: true,
   autoplay: {
     delay: 5000,
