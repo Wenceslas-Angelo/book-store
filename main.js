@@ -7,8 +7,9 @@ const loginBtn = document.querySelector("#login-btn");
 const closeLoginBtn = document.querySelector("#close-login-btn");
 
 const featuredWrapper = document.querySelector("#featured .swiper-wrapper");
+const arrivalWrapper = document.querySelectorAll("#arrivals .swiper-wrapper");
 
-const featureds = [
+const books = [
   {
     id: 1,
     image: "./image/book-1.png",
@@ -73,7 +74,10 @@ const featureds = [
 
 let featuredContent = "";
 
-featureds.forEach((featured) => {
+let arrivalsContentOne = "";
+let arrivalsContentTwo = "";
+
+books.forEach((book) => {
   featuredContent += `
   <div class="swiper-slide box">
     <div class="icons">
@@ -82,17 +86,60 @@ featureds.forEach((featured) => {
       <a href="#"><i class="fas fa-eye"></i></a>
     </div>
     <div class="image">
-      <img src="${featured.image}" alt="book image" />
+      <img src="${book.image}" alt="book image" />
     </div>
     <div class="content">
       <h3>Featured books</h3>
-      <div class="price">$${featured.newPrice} <span>$${featured.oldPrice}</span></div>
+      <div class="price">$${book.newPrice} <span>$${book.oldPrice}</span></div>
       <a href="#" class="btn">Add to cart</a>
     </div>
   </div>`;
 });
 
 featuredWrapper.innerHTML = featuredContent;
+
+books.forEach((book, index) => {
+  index < 5
+    ? (arrivalsContentOne += `
+    <a href="#" class="swiper-slide box">
+      <div class="image">
+        <img src="${book.image}" alt="book image" />
+      </div>
+      <div class="content">
+        <h3>New arrivals</h3>
+        <div class="price">$${book.newPrice}<span>$${book.oldPrice}</span></div>
+        <div class="stars">
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star"></i></span>
+          <span><i class="fas fa-star-half-alt"></i></span>
+        </div>
+      </div>
+    </a>
+  `)
+    : (arrivalsContentTwo += `
+  <a href="#" class="swiper-slide box">
+    <div class="image">
+      <img src="${book.image}" alt="book image" />
+    </div>
+    <div class="content">
+      <h3>New arrivals</h3>
+      <div class="price">$${book.newPrice}<span>$${book.oldPrice}</span></div>
+      <div class="stars">
+        <span><i class="fas fa-star"></i></span>
+        <span><i class="fas fa-star"></i></span>
+        <span><i class="fas fa-star"></i></span>
+        <span><i class="fas fa-star"></i></span>
+        <span><i class="fas fa-star-half-alt"></i></span>
+      </div>
+    </div>
+  </a>
+`);
+});
+
+arrivalWrapper[0].innerHTML = arrivalsContentOne;
+arrivalWrapper[1].innerHTML = arrivalsContentTwo;
 
 window.addEventListener("scroll", () => {
   searchForm.classList.remove("show");
@@ -162,6 +209,27 @@ const swiperFeatured = new Swiper(".featured-slider", {
     },
     1024: {
       slidesPerView: 4,
+    },
+  },
+});
+
+const swiperArrivals = new Swiper(".arrivals-slider", {
+  loop: true,
+  centeredSlides: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
     },
   },
 });

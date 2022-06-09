@@ -476,6 +476,78 @@ header .header-two.active {
 }
 /* Featured section end */
 
+/* Newsletter section start */
+.newsletter {
+  background: url(./image/letter-bg.jpg) no-repeat fixed center;
+  background-size: cover;
+}
+
+.newsletter form {
+  max-width: 45rem;
+  margin-left: auto;
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.newsletter form h3 {
+  font-size: 2.2rem;
+  color: #fff;
+  padding-bottom: 0.5rem;
+}
+
+.newsletter form .box {
+  width: 100%;
+  color: var(--black);
+  font-size: 1.6rem;
+  padding: 1rem 1.2rem;
+  margin: 0.7rem 0;
+  outline: none;
+  border-radius: 0.5rem;
+}
+
+/* Newsletter section end */
+
+/* Arrivals section start */
+#arrivals .arrivals-slider .box {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  border: var(--border);
+  margin: 1rem 0;
+}
+
+#arrivals .arrivals-slider .box:hover {
+  border: var(--border-hover);
+}
+
+#arrivals .arrivals-slider .box .image img {
+  height: 25rem;
+}
+
+#arrivals .arrivals-slider .box .content h3 {
+  color: var(--black);
+  font-size: 2rem;
+}
+
+#arrivals .arrivals-slider .box .content .price {
+  font-size: 2.2rem;
+  color: var(--black);
+  padding-bottom: 0.5rem;
+}
+
+#arrivals .arrivals-slider .box .content .price span {
+  font-size: 1.5rem;
+  color: var(--light-color);
+  text-decoration: line-through;
+}
+
+#arrivals .arrivals-slider .box .content .stars span {
+  font-size: 1.5rem;
+  color: var(--green);
+}
+/* Arrivals section end */
+
 .swiper-button-next,
 .swiper-button-prev {
   border: var(--border);
@@ -556,6 +628,15 @@ header .header-two.active {
 
   #home .row .content h3 {
     font-size: 3.5rem;
+  }
+
+  .newsletter {
+    background-position: right;
+  }
+
+  .newsletter form {
+    margin-left: 0;
+    max-width: 100%;
   }
 }
 
