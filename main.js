@@ -72,13 +72,8 @@ const books = [
   },
 ];
 
-let featuredContent = "";
-
-let arrivalsContentOne = "";
-let arrivalsContentTwo = "";
-
 books.forEach((book) => {
-  featuredContent += `
+  featuredWrapper.innerHTML += `
   <div class="swiper-slide box">
     <div class="icons">
       <a href="#"><i class="fas fa-search"></i></a>
@@ -96,11 +91,9 @@ books.forEach((book) => {
   </div>`;
 });
 
-featuredWrapper.innerHTML = featuredContent;
-
 books.forEach((book, index) => {
   index < 5
-    ? (arrivalsContentOne += `
+    ? (arrivalWrapper[0].innerHTML += `
     <a href="#" class="swiper-slide box">
       <div class="image">
         <img src="${book.image}" alt="book image" />
@@ -118,7 +111,7 @@ books.forEach((book, index) => {
       </div>
     </a>
   `)
-    : (arrivalsContentTwo += `
+    : (arrivalWrapper[1].innerHTML += `
   <a href="#" class="swiper-slide box">
     <div class="image">
       <img src="${book.image}" alt="book image" />
@@ -137,9 +130,6 @@ books.forEach((book, index) => {
   </a>
 `);
 });
-
-arrivalWrapper[0].innerHTML = arrivalsContentOne;
-arrivalWrapper[1].innerHTML = arrivalsContentTwo;
 
 window.addEventListener("scroll", () => {
   searchForm.classList.remove("show");
