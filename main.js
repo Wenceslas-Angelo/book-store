@@ -11,6 +11,8 @@ const arrivalWrapper = document.querySelectorAll("#arrivals .swiper-wrapper");
 const reviewWrapper = document.querySelector("#reviews .swiper-wrapper");
 const blogWrapper = document.querySelector("#blogs .swiper-wrapper");
 
+const loader = document.querySelector(".loader-container");
+
 const books = [
   {
     id: 1,
@@ -180,6 +182,8 @@ const blogs = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dolore aliquid cum maxime provident atque veritatis quasi inventore beatae illum!",
   },
 ];
+
+setTimeout(() => loader.classList.add("hidden"), 5000);
 
 books.forEach((book) => {
   featuredWrapper.innerHTML += `
