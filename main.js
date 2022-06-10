@@ -9,6 +9,7 @@ const closeLoginBtn = document.querySelector("#close-login-btn");
 const featuredWrapper = document.querySelector("#featured .swiper-wrapper");
 const arrivalWrapper = document.querySelectorAll("#arrivals .swiper-wrapper");
 const reviewWrapper = document.querySelector("#reviews .swiper-wrapper");
+const blogWrapper = document.querySelector("#blogs .swiper-wrapper");
 
 const books = [
   {
@@ -88,7 +89,7 @@ const reviews = [
   {
     id: 2,
     client: {
-      name: "Monkey D. Luffy",
+      name: "Nico Robin",
       image: "./image/pic-2.png",
     },
     message: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi,
@@ -99,7 +100,7 @@ const reviews = [
   {
     id: 3,
     client: {
-      name: "Monkey D. Luffy",
+      name: "Vinsmoke Sanji",
       image: "./image/pic-3.png",
     },
     message: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi,
@@ -110,7 +111,7 @@ const reviews = [
   {
     id: 4,
     client: {
-      name: "Monkey D. Luffy",
+      name: "Nami",
       image: "./image/pic-4.png",
     },
     message: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi,
@@ -121,7 +122,7 @@ const reviews = [
   {
     id: 5,
     client: {
-      name: "Monkey D. Luffy",
+      name: "Zoro",
       image: "./image/pic-5.png",
     },
     message: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi,
@@ -132,13 +133,51 @@ const reviews = [
   {
     id: 6,
     client: {
-      name: "Monkey D. Luffy",
+      name: "Yamato",
       image: "./image/pic-6.png",
     },
     message: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi,
     beatae distinctio iure ratione expedita ex nihil accusantium optio
     commodi a ut quidem adipisci tempore nisi ullam eaque blanditiis.
     Eaque, eum.`,
+  },
+];
+
+const blogs = [
+  {
+    id: 1,
+    image: "./image/blog-1.jpg",
+    title: "Blog title goes here",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dolore aliquid cum maxime provident atque veritatis quasi inventore beatae illum!",
+  },
+  {
+    id: 2,
+    image: "./image/blog-2.jpg",
+    title: "Blog title goes here",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dolore aliquid cum maxime provident atque veritatis quasi inventore beatae illum!",
+  },
+  {
+    id: 3,
+    image: "./image/blog-3.jpg",
+    title: "Blog title goes here",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dolore aliquid cum maxime provident atque veritatis quasi inventore beatae illum!",
+  },
+  {
+    id: 4,
+    image: "./image/blog-4.jpg",
+    title: "Blog title goes here",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dolore aliquid cum maxime provident atque veritatis quasi inventore beatae illum!",
+  },
+  {
+    id: 5,
+    image: "./image/blog-5.jpg",
+    title: "Blog title goes here",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dolore aliquid cum maxime provident atque veritatis quasi inventore beatae illum!",
   },
 ];
 
@@ -217,6 +256,21 @@ reviews.forEach((review) => {
     <span><i class="fas fa-star-half-alt"></i></span>
   </div>
 </div>
+  `;
+});
+
+blogs.forEach((blog) => {
+  blogWrapper.innerHTML += `
+  <div class="swiper-slide box">
+    <div class="image">
+      <img src="${blog.image}" alt="blog image">
+    </div>
+    <div class="content">
+      <h3>${blog.title}</h3>
+      <p>${blog.description}</p>
+      <a href="#" class="btn">Read more</a>
+    </div>
+  </div>
   `;
 });
 
@@ -320,6 +374,31 @@ const swiperReviews = new Swiper(".reviews-slider", {
   autoplay: {
     delay: 5000,
     disableOnInteraction: false,
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+});
+
+const swiperBlogs = new Swiper(".blogs-slider", {
+  loop: true,
+  gabCursor: true,
+  centeredSlides: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
   },
 
   breakpoints: {
